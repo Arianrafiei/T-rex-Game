@@ -70,6 +70,26 @@
     border-radius: 5px;
 }
 
+#box-chance{
+    position: relative;
+    width: 80px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -20px;
+    float: right;
+    right: 20px;
+    background-color: #464646;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#my-chance{
+    font-size: 20px;
+}
+
 @keyframes jump {
     0% {
         top: 170px;
