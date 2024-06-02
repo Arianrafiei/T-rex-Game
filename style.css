@@ -47,12 +47,17 @@
     animation-direction: alternate;
 }
 
+#box-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #box-point {
     position: relative;
     width: 120px;
     height: 20px;
-    top: 10px;
-    left: 20px;
     background-color: #464646;
     color: #fff;
     padding: 5px;
@@ -60,8 +65,7 @@
 }
 
 #box-level{
-    position: absolute;
-    top: 350px;
+    position: relative;
     background-color: #464646;
     color: #fff;
     width: 120px;
@@ -77,9 +81,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -20px;
-    float: right;
-    right: 20px;
     background-color: #464646;
     color: #fff;
     padding: 5px;
@@ -88,6 +89,13 @@
 
 #my-chance{
     font-size: 20px;
+}
+
+#gameover{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    display: none;
 }
 
 @keyframes jump {

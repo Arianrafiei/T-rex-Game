@@ -4,6 +4,7 @@ let cactus = document.querySelector("#cactus");
 let my_point = document.querySelector("#my-point");
 let my_level = document.querySelector("#my-level");
 let my_chance = document.querySelector("#my-chance");
+let gameover = document.querySelector("#gameover");
 let cactus_flag = false;
 let check_level = true;
 
@@ -24,10 +25,16 @@ document.addEventListener("keydown", (e) => {
     if (e.code == "Space") {
         jump_dinosaur();
     }
+    if (chance_to_play == 0 && e.code == "Space") {
+        window.location.reload();
+    }
 });
 
 document.addEventListener("click", () => {
     jump_dinosaur();
+    if (chance_to_play == 0) {
+        window.location.reload();
+    }
 });
 
 let check_live_game = setInterval(() => {
@@ -40,19 +47,15 @@ let check_live_game = setInterval(() => {
 
     if (cactus_left > 95 && cactus_left < 100 && dinosaur_top > 150) {
         chance_to_play--;
-        console.log("====================================");
-        console.log(chance_to_play);
-        console.log("====================================");
         my_chance.innerHTML = chance_to_play;
     }
 
     if (chance_to_play == 0) {
-        dinosaur.style.animationplaystate = "paused";
-        cactus.style.animationplaystate = "paused";
-        game.style.animationplaystate = "paused";
+        dinosaur.style.animationPlayState = "paused";
+        cactus.style.animationPlayState = "paused";
+        game.style.animationPlayState = "paused";
+        gameover.style.display = "block";
         clearInterval(check_live_game);
-        alert("Game over - Your point : " + point + " - Try Again");
-        window.location.reload();
     }
 
     if (cactus_left < 10 && cactus_flag) {
